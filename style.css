@@ -1,0 +1,58 @@
+body{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator{
+    background-color: blue;
+    width: 360px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.display{
+    background-color: blueviolet;
+    text-align: center;
+    width: 360px;
+    height: 200px;
+}
+
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1rem;
+    align-items: center;
+    justify-content: center;
+    width: 360px;
+
+    .btn{
+        width: 60px;
+        height: 60px;
+    }
+
+    #add{
+        width: 60px; 
+        height: 60px;
+    }
+
+    #equal{
+        width: 60px;
+        height: 60px;
+    }
+
+    #zero{
+        width: 200px;
+        height: 60px;
+    }
+
+    #decimal{
+        width: 60px;
+    }
+}
