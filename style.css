@@ -1,58 +1,121 @@
-body{
+body {
     padding: 0;
     margin: 0;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    font-family: "Concert One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3rem;
 }
 
-.calculator{
-    background-color: blue;
+.calculator {
+    box-shadow: #328e6e90 0px 7px 29px 0px;
+    border-radius: 25px;
     width: 360px;
-    height: 600px;
+    height: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
 }
 
-.display{
-    background-color: blueviolet;
-    text-align: center;
-    width: 360px;
+.display {
+    background-color: #a0d683;
+    border-radius: 25px;
+    display: flex;
+
+    color: white;
+
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+    width: 340px;
     height: 200px;
+
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
-.buttons{
+.buttons {
     display: flex;
     flex-wrap: wrap;
-    gap:1rem;
+    gap: 1rem;
     align-items: center;
     justify-content: center;
     width: 360px;
 
-    .btn{
+    .btn {
         width: 60px;
         height: 60px;
+        text-align: center;
+        background-color: transparent;
+        border: none;
+        margin: 0;
+        padding: 0;
+
+        color: #328e6e;
+
+        border-radius: 0;
+        appearance: none;
+        cursor: pointer;
+
+        font-family: "Concert One", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+        font-size: 1.5rem;
+
     }
 
-    #add{
-        width: 60px; 
+    .btn:hover {
+        border-radius: 8px;
+        background-color: #e0ede7;
+    }
+
+    .btn-down {
+        width: 136px;
         height: 60px;
+        font-family: "Concert One", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+        font-size: 1.5rem;
     }
 
-    #equal{
-        width: 60px;
-        height: 60px;
+    .green {
+        background-color: #a0d683;
+        margin: 0;
+        padding: 0;
+        border-radius: 8px;
+        border-style: none;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        /* font-size: 14px;
+        font-weight: 500; */
+
+        line-height: 20px;
+        list-style: none;
+        margin: 0;
+        outline: none;
+
+        text-align: center;
+        text-decoration: none;
+        transition: color 100ms;
+        vertical-align: baseline;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+
+
+
     }
 
-    #zero{
-        width: 200px;
-        height: 60px;
+    .green:hover {
+        background-color: #328e6e;
     }
 
-    #decimal{
-        width: 60px;
-    }
 }

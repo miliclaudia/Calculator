@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Calculator</title>
 </head>
@@ -13,28 +16,29 @@
         <div class="display">0</div>
 
         <div class="buttons">
-            <button class="btn operators" id="clear" onclick="clearDisplay()">AC</button>
-            <button class="btn operators" id="delete" onclick="deleteLast()">X</button>
-            <button class="btn operators" id="divide" onclick="setOperator('/')">/</button>
-            <button class="btn operators" id="multiply" onclick="setOperator('*')">*</button>
+            <button class="btn green" onclick="clearDisplay()">AC</button>
+            <button class="btn green" onclick="deleteLast()">X</button>
+            <button class="btn green">%</button>
+            <button class="btn green" onclick="setOperator('/')">/</button>
 
-            <button class="btn number" onclick="addDigit('7')">7</button>
-            <button class="btn number" onclick="addDigit('8')">8</button>
-            <button class="btn number" onclick="addDigit('9')">9</button>
-            <button class="btn operators" id="substract" onclick="setOperator('-')">-</button>
+            <button class="btn" onclick="addDigit('7')">7</button>
+            <button class="btn" onclick="addDigit('8')">8</button>
+            <button class="btn" onclick="addDigit('9')">9</button>
+            <button class="btn green" onclick="setOperator('*')">*</button>
 
-            <button class="btn number" onclick="addDigit('4')">4</button>
-            <button class="btn number" onclick="addDigit('5')">5</button>
-            <button class="btn number" onclick="addDigit('6')">6</button>
-            <button id="add" onclick="setOperator('+')">+</button>
+            <button class="btn" onclick="addDigit('4')">4</button>
+            <button class="btn" onclick="addDigit('5')">5</button>
+            <button class="btn" onclick="addDigit('6')">6</button>
+            <button class="btn green" onclick="setOperator('-')">-</button>
 
-            <button class="btn number" onclick="addDigit('1')">1</button>
-            <button class="btn number" onclick="addDigit('2')">2</button>
-            <button class="btn number" onclick="addDigit('3')">3</button>
-            <button id="equal" onclick="equalButton()">=</button>
+            <button class="btn" onclick="addDigit('1')">1</button>
+            <button class="btn" onclick="addDigit('2')">2</button>
+            <button class="btn" onclick="addDigit('3')">3</button>
+            <button class="btn green" onclick="setOperator('+')">+</button>
 
-            <button id="zero" onclick="addDigit('0')">0</button>
-            <button class="btn" id="decimal" onclick="addDecimal()">.</button>
+            <button class="btn" onclick="addDigit('0')">0</button>
+            <button class="btn" onclick="addDecimal()">.</button>
+            <button class="btn-down green" onclick="equalButton()">=</button>
 
         </div>
     </div>
