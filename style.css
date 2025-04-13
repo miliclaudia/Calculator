@@ -3,8 +3,12 @@ body {
     margin: 0;
     height: 100vh;
     display: flex;
+
     align-items: center;
     justify-content: center;
+
+    background: center url("images/bg.png");
+    background-size: cover;
 
     font-family: "Concert One", sans-serif;
     font-weight: 400;
@@ -12,32 +16,50 @@ body {
     font-size: 3rem;
 }
 
+.tanuki {
+    position: absolute;
+    top: calc(50% - 258px);
+    left: calc(50% - 188px);
+    width: 360px;
+    height: auto;
+    z-index: 10;
+}
+
 .calculator {
     box-shadow: #328e6e90 0px 7px 29px 0px;
+    background-color: white;
     border-radius: 25px;
     width: 360px;
     height: 700px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 4rem;
 }
 
 .display {
     background-color: #a0d683;
+    color: white;
     border-radius: 25px;
+
     display: flex;
 
-    color: white;
-
-    align-items: center;
     justify-content: flex-end;
+
     padding-right: 20px;
     width: 340px;
     height: 200px;
 
-    overflow-x: auto;
+    overflow: hidden;
     white-space: nowrap;
+
+    font-size: 2.5rem;
+    text-align: right;
+}
+
+.result {
+    margin-top: 50px;
 }
 
 .buttons {
@@ -94,8 +116,6 @@ body {
         color: #FFFFFF;
         cursor: pointer;
         display: inline-block;
-        /* font-size: 14px;
-        font-weight: 500; */
 
         line-height: 20px;
         list-style: none;
@@ -109,13 +129,40 @@ body {
         user-select: none;
         -webkit-user-select: none;
         touch-action: manipulation;
-
-
-
     }
 
     .green:hover {
         background-color: #328e6e;
     }
+}
 
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+
+
+.footer {
+    color: #328e6e;
+    position: absolute;
+    bottom: calc(50% - 350px);
+    left: calc(50% - 125px);
+
+    font-weight: 100;
+    font-size: 1rem;
+
+    a {
+        text-decoration: none;
+        color: #a0d683;
+    }
+
+    a:visited {
+        text-decoration: none;
+        color: #a0d683;
+    }
 }

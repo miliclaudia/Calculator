@@ -1,4 +1,4 @@
-const display = document.querySelector(".display");
+const display = document.querySelector(".result");
 let firstNumber = "";
 let secondNumber = "";
 let operator = "";
@@ -21,22 +21,46 @@ function displayUpdate() {
     display.innerText = "0";
   }
 
-  // console.log(firstNumber);
-  // console.log(secondNumber);
-  // console.log(operator);
+  shrinkText();
 }
 
+let addDigitToFirstNumber = false;
+let addDigitToSecondNumber = false;
+function shrinkText() {
+  const fontSize = parseInt(window.getComputedStyle(display).fontSize);
+  const displayWidth = display.clientWidth;
+  const size = displayWidth / fontSize;
+  if (
+    firstNumber.length > size &&
+    addDigitToFirstNumber &&
+    firstNumber.length < 15 &&
+    fontSize > 22
+  ) {
+    display.style.fontSize = `${fontSize - 1}px`;
+  }
+  if (
+    secondNumber.length + firstNumber.length > size &&
+    addDigitToSecondNumber &&
+    secondNumber.length < 15 &&
+    fontSize > 22
+  ) {
+    display.style.fontSize = `${fontSize - 1}px`;
+  }
+}
 
 //Buttons functions
 function addDigit(digit) {
-  if (operator == "") {
-    if (firstNumber.length < 17) {
+  if (operator == '') {
+    if (firstNumber.length < 15) {
       firstNumber += digit;
+      addDigitToFirstNumber = true;
+      addDigitToSecondNumber = false;
     }
-  }
-  else {
-    if (secondNumber.length < 17) {
+  } else {
+    if (secondNumber.length < 15) {
       secondNumber += digit;
+      addDigitToSecondNumber = true;
+      addDigitToFirstNumber = false;
     }
   }
   displayUpdate();
@@ -45,9 +69,13 @@ function addDigit(digit) {
 function equalButton() {
   if (firstNumber != "" && operator != "" && secondNumber != "") {
     calculate();
+    display.style.fontSize = '40px'; // Reset font size to default
   }
+
 }
 
+
+//Decimal
 function addDecimal() {
   if (operator == "") {
     if (!firstNumber.includes(".")) {
@@ -62,6 +90,7 @@ function addDecimal() {
   displayUpdate();
 }
 
+
 function setOperator(op) {
   if (firstNumber != "") {
     if (operator != "" && secondNumber != "") {
@@ -73,8 +102,24 @@ function setOperator(op) {
 }
 
 
+//Percentage function
+function applyPercentage() {
+
+  if (firstNumber !== "" && operator == "" && secondNumber == "") {
+    firstNumber = procent(parseFloat(firstNumber)).toString();
+  } else if (firstNumber !== "" && operator !== "" && secondNumber !== "") {
+    secondNumber = firstNumber * procent(parseFloat(secondNumber));
+
+  }
+
+  displayUpdate();
+}
+
+
 //Delete functions
 function deleteLast() {
+  addDigitToFirstNumber=false;
+  addDigitToSecondNumber=false;
   if (secondNumber != "") {
     secondNumber = secondNumber.slice(0, -1);
   } else if (operator != "") {
@@ -82,7 +127,11 @@ function deleteLast() {
   } else if (firstNumber != "") {
     firstNumber = firstNumber.slice(0, -1);
   }
-
+  const maxFontSize = 40;
+  let fontSize = parseInt(window.getComputedStyle(display).fontSize);
+  if (fontSize < maxFontSize) {
+    display.style.fontSize = `${fontSize + 1}px`;
+  }
   displayUpdate();
 }
 
@@ -90,6 +139,7 @@ function clearDisplay() {
   firstNumber = "";
   secondNumber = "";
   operator = "";
+  display.style.fontSize = '40px'; // Reset font size to default
   display.innerText = "0";
 }
 
@@ -126,7 +176,9 @@ const add = function (num1, num2) {
 };
 
 const subtract = function (num1, num2) {
-  return Math.round((num1 - num2) * 100) / 100;
+  console.log('num1', num1);
+  console.log('num2', num2);
+  return num1 - num2;
 };
 
 const multiply = function (num1, num2) {
@@ -135,4 +187,8 @@ const multiply = function (num1, num2) {
 
 const divide = function (num1, num2) {
   return Math.round((num1 / num2) * 100) / 100;
+}
+
+const procent = function (num1) {
+  return Math.round((num1 / 100) * 100) / 100;
 }

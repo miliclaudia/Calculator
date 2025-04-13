@@ -7,18 +7,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=backspace" />
+
+
     <link rel="stylesheet" href="style.css">
     <title>Calculator</title>
 </head>
 
 <body>
+
     <div class="calculator">
-        <div class="display">0</div>
+
+        <div class="display">
+            <div class="result">0</div>
+        </div>
+
+        <img class="tanuki" src="images/tanuki.png">
 
         <div class="buttons">
-            <button class="btn green" onclick="clearDisplay()">AC</button>
-            <button class="btn green" onclick="deleteLast()">X</button>
-            <button class="btn green">%</button>
+            <button class="btn green" onclick="clearDisplay()">C</button>
+            <button class="btn green" onclick="deleteLast()"><span
+                    class="material-symbols-outlined">backspace</span></button>
+            <button class="btn green" onclick="applyPercentage()">%</button>
             <button class="btn green" onclick="setOperator('/')">/</button>
 
             <button class="btn" onclick="addDigit('7')">7</button>
@@ -42,6 +53,14 @@
 
         </div>
     </div>
+
+    <div class="footer">
+        <p>Built by <a href="https://github.com/miliclaudia" target="_blank" rel="noopener noreferrer">miliclaudia</a> |
+            <a href="https://github.com/miliclaudia/calculator" target="_blank" rel="noopener noreferrer">Source
+                code</a></p>
+    </div>
+
+
 
 
 </body>
