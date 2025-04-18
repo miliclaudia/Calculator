@@ -192,3 +192,25 @@ const divide = function (num1, num2) {
 const procent = function (num1) {
   return Math.round((num1 / 100) * 100) / 100;
 }
+
+
+//Keyboard support
+document.addEventListener('keydown', function (event) {
+  const key = event.key;
+
+  if (!isNaN(key)) {
+      addDigit(key);
+  } else if (key === '.') {
+      addDecimal();
+  } else if (key === '+' || key === '-' || key === '*' || key === '/') {
+      setOperator(key);
+  } else if (key === 'Enter' || key === '=') {
+      equalButton();
+  } else if (key === 'Backspace') {
+      deleteLast();
+  } else if (key === 'Escape') {
+      clearDisplay();
+  } else if (key === '%') {
+      applyPercentage();
+  }
+});
