@@ -8,10 +8,9 @@
 ## 🖼️ Preview
 
 <p align="center">
-  <img src="./images/Screenshot.png" alt="App Preview" width="400"/>
+  <img src="./images/Screenshot.png" alt="App Preview" height="400"/>
 </p>
 
-<p align="center"><em>Unleash your inner pixel artist!</em></p>
 
 ---
 
